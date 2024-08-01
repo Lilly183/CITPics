@@ -1,0 +1,233 @@
+.images .image-item 
+{
+    position: relative;
+}
+
+.images .image-item:after 
+{
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.images .image-item .image-text-more 
+{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 30px;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+
+.images .image-item .image-text-more .icon 
+{
+    color: #fff;
+    font-size: 20px;
+}
+
+.images .image-item .image-text-more .heading 
+{
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.images .image-item .image-text-more .meta 
+{
+    color: #cccccc;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.images .image-item img 
+{
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 300px;
+}
+
+@media (max-width: 575.98px) 
+{
+    .images .image-item img 
+    {
+        height: 200px;
+    }
+}
+
+.images .image-item:hover:after 
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.images .image-item:hover .image-text-more 
+{
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 
+Card Body Properties
+*/
+
+.image-card-body
+{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    background-color: #8FE4CA;
+}
+
+.image-card-title
+{
+    padding: 8px 0px 4px 0px;   
+    background-color: #13785a;
+}
+
+.image-card-summary
+{
+    border-left: 1px solid #72b6a2;
+    border-right: 1px solid #72b6a2;
+}
+
+.image-card-footer
+{
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    padding: 5px 16px;
+    margin-bottom: 10px;
+    background-color: #F7F7F7;
+    border: 1px solid #72b6a2;
+}
+
+/* Stylizes the span tag used to show/hide the comment section */
+
+.viewComments
+{
+    transition: .3s all ease;
+    color: #20c997;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.viewComments:hover
+{
+    color: #158765;
+}
+
+.likeButton:hover
+{
+    cursor: pointer;
+}
+
+/* Stylizes the comment section underneath each picture */
+
+.commentSectionContainer
+{
+    display: none;
+    transition: .3s all ease;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* All comments have left and right borders */
+
+.commentSectionComments > *
+{   
+    border-left: 1px solid #CFB284;
+    border-right: 1px solid #CFB284;
+}
+
+/* Applies striping to each comment row */
+
+.commentSectionComments > :nth-child(1)
+{
+    border-top: 1px solid #CFB284;
+}
+
+.commentSectionComments > :nth-child(odd)
+{
+    background-color: #FFEFCB;
+}
+
+.commentSectionComments > :nth-child(even)
+{
+    background-color: #F6E3BA
+    ;
+}
+
+/* 
+Divides space within the form used for submitting a new comment 
+between the textbox and "Post!" button.
+*/
+
+.postCommentForm
+{
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+}
+
+/* Styles the textbox used to post new comments for a picture */
+
+.commentTextBox
+{
+    min-height: 38px;    
+    height: 43px;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    border: 1px solid #ced4da;
+}
+
+.commentTextBox:hover, .commentTextBox:active, .commentTextBox:focus
+{
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.commentTextBox:active, .commentTextBox:focus
+{
+    border-color: #20c997;
+}
+
+.commentTextBox:focus
+{
+    color: #495057;
+    background-color: #fff;
+    border-color: #7eeaca;
+    outline: 0;
+}

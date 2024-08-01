@@ -1,0 +1,254 @@
+:root
+{
+    --headerHeight: 92px;
+    --footerHeight: 90px;
+}
+
+header
+{
+    height: var(--headerHeight);
+}
+
+body 
+{
+    min-height: 100vh;
+    padding-bottom: var(--footerHeight);
+    position: relative;
+}
+
+/* 
+Changes background color of the footer to black and sets text color to gray. Absolute positioning is used to 
+place the footer at the bottom of the page and center all of its contents. 
+*/
+
+footer
+{
+    width: 100%;
+    height: var(--footerHeight);
+    background-color: #000;
+    color: gray;
+
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Remove vestigial bottom margin that is (otherwise) applied to all elements via template. */
+
+footer *
+{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Resizes the CIT Pics logo found in the header. */
+
+#citLogo 
+{
+    height: 48px;
+    width: 176px;
+}
+
+/* 
+The <div> containing the login form is given a fixed width; this prevents it from both expanding 
+to fill its parent's width and squishing the text fields when zoomed in. 
+*/
+
+.login-form 
+{
+    max-width: 385px;
+}
+
+/* 
+Sets a light shade of grey as the background color used by the login form, register form, and 
+upload form. 
+*/
+
+.login-form form, .register-form, .upload-form
+{
+    background-color: #f7f7f7;
+}
+
+/* 
+Adjusts the font size and padding applied to the user and padlock icons on the "Login" page. 
+Specifies a minimum width to prevent them from being squished. Website's theme is used as 
+the background color. 
+*/
+
+.input-group-addon .fa 
+{
+    padding: 12.7px;
+    font-size: 18px;  
+    background:#20c997;
+    min-width: 43px;
+}
+
+.form-control, .login-btn 
+{
+    min-height: 38px;
+    border-radius: 2px;
+}
+
+/* 
+Stylizes the error message displayed on the Login page when the user attempts to sign-in 
+with invalid credentials.
+*/
+
+.errorMessage
+{
+    border-radius: 5px;
+    border: 2px solid #f23a2e;
+    background: #fbb8b3;
+}
+
+/* 
+Stylizes the message used to relay information about whether or not an attempt to add 
+a new user to the database via the register form was successful. 
+
+NOTE: registerMessageSuccess has been deprecrated. From the user's standpoint, it's 
+more convenient / more intuitive to be redirected to the login page than it is to be 
+presented with a "Success!" message. However, the message can be re-enabled by 
+uncommenting the code found in 'register.php'.
+*/
+
+.registerMessageSuccess, .registerMessageFail
+{
+    border-radius: 5px;
+}
+
+.registerMessageSuccess
+{
+    border: 2px solid #CFB284;
+    background: #FFEFCB;
+}
+
+.registerMessageSuccess a
+{
+    color: #CFB284;
+}
+
+.registerMessageSuccess a:hover
+{
+    color: #a68e6a;
+}
+
+.registerMessageFail
+{
+    border: 2px solid #f23a2e;
+    background: #fbb8b3;
+}
+
+/* Stylizes the logout button that appears in the top right corner when a user is logged in. */
+
+#logoutButton
+{
+    background-color: #FFEFCB;
+    border: 1px solid #CFB284;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;   
+}
+
+#logoutButton:hover
+{
+    color: #a68e6a;
+}
+
+/* 
+—————————————————————————————
+userList Table on Admin Page:
+—————————————————————————————
+*/
+
+#userList
+{
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #20C997;
+}
+
+#userList td, th
+{
+    padding: 0.6875rem;
+    vertical-align: top;
+}
+
+/* 
+—————————————
+Striped Rows:
+————————————— 
+*/
+
+#userList tr:nth-child(odd)
+{
+    background-color: #e9faf5;
+}
+
+#userList tr:nth-child(even)
+{
+    background-color: #d3f5ea;
+}
+
+/*
+———————————————————
+Admin => User Page:
+———————————————————
+*/
+
+#adminDirectionsHeading 
+{
+    color: #000;
+    position: relative;
+    font-size: 1.5rem; 
+}
+
+#deleteContainer
+{
+    min-height: 377px;
+}
+
+.deletable:hover
+{
+    cursor: pointer;
+}
+
+/*
+———————————————
+Upload Message:
+———————————————
+*/
+
+.uploadMessageSuccess, .uploadMessageFail
+{
+    border-radius: 5px;
+}
+
+.uploadMessageSuccess
+{
+    border: 2px solid #CFB284;
+    background: #FFEFCB;
+}
+
+.uploadMessageFail
+{
+    border: 2px solid #f23a2e;
+    background: #fbb8b3;
+}
